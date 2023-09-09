@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="stylesheet" href="HeaderFooter.css">
+    <link rel="stylesheet" href="Appointmnet.css">
+    <title>Dog Appointment</title>
+</head>
+
+<body>
+    <object data="header.html" width="100%" height="100"></object>
+
+
+    <h1><br><br>
+        Appointment</h1>
+    <br><br><br><br>
+
+    <form id="appointment">
+        <section class="appointmentform">
+            <label for="name"><b>Name:</b>&ensp;&emsp;&emsp;&emsp;&emsp;</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email"><b>Email:</b>&ensp;&emsp;&emsp;&emsp;&emsp;</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone"><b>Phone:</b>&ensp;&emsp;&emsp;&emsp;&emsp;</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="street"><b>Address:</b>&nbsp;&ensp;&emsp;&emsp;&emsp;</label>
+            <input type="text" id="address" name="address" required><br><br>
+
+            <label for="city"><b>City:</b>&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+            <input type="text" id="city" name="city" required><br><br>
+
+            <label for="service"><b>Service:</b>&emsp;</label>
+            &emsp;&ensp;&ensp;&emsp;&emsp;<input type="radio" id="compgrooming" name="service" value="Complete Grooming">
+            <label for="Complete Grooming">Complete Grooming</label><br>
+            &ensp;&emsp;&ensp;&nbsp;&emsp;&emsp;&emsp;<input type="radio" id="dentalcare" name="service" value="Dental Care">
+            <label for="Dental Care">Dental Care</label><br>
+            &emsp;&emsp;&ensp;&ensp;&ensp;&emsp;&emsp;<input type="radio" id="dogwalking" name="service" value="Dog Walking">
+            <label for="Dog Walking">Dog Walking</label><br>
+            &ensp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;<input type="radio" id="dogtraining" name="service" value="Dog Training">
+            <label for="Dog Training">Dog Training</label><br>
+            &nbsp;&emsp;&emsp;&emsp;&ensp;<input type="radio" id="daycare" name="service" value="daycare">
+            <label for="daycare">Day Care</label><br>
+            &emsp;&ensp;&emsp;&ensp;&ensp;<input type="radio" id="boarding" name="service" value="Boarding">
+            <label for="Boarding">Boarding</label><br>
+            &emsp;&emsp;&ensp;&emsp;&ensp;&emsp;&emsp;&emsp;<input type="radio" id="vet" name="service" value="vet">
+            <label for="vet">Veterinary Service</label><br><br>
+
+            <label for="date"><b>Preferred Date:</b></label>&emsp;&emsp;&emsp;&ensp;
+            <input type="date" id="date" name="date" required><br><br>
+
+            <label for="time"><b>Preferred Time:</b></label>&emsp;&emsp;&emsp;&emsp;&ensp;
+            <input type="time" id="time" name="time" required><br><br>
+
+            <label for="message"><b>Requests/Message:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</b></label><br>
+            &ensp;&emsp;&ensp;&emsp;&emsp;&emsp;<textarea id="message" name="message" rows="4" cols="45"></textarea><br><br>
+
+            &emsp;&emsp;&emsp; <input type="submit" value="Submit">
+        </section>
+    </form>
+
+    <object data="footer.html" width="100%" height="178"></object>
+
+    <script>
+        document.getElementById("appointment").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phoneNumber = document.getElementById("phone").value;
+            var address = document.getElementById("address").value;
+            var city = document.getElementById("city").value;
+
+            var service = "";
+            var serviceRadios = document.getElementsByName('service');
+            for (var i = 0; i < serviceRadios.length; i++) {
+                if (serviceRadios[i].checked) {
+                    service = serviceRadios[i].value;
+                    break;
+                }
+            }
+
+            var prefDate = document.getElementById("date").value;
+            var prefTime = document.getElementById("time").value;
+            var request = document.getElementById("message").value;
+
+            fetch('/appointment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    phoneNumber: phoneNumber,
+                    address: address,
+                    city: city,
+                    service: service,
+                    prefDate: prefDate,
+                    prefTime: prefTime,
+                    request: request
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Appointment created successfully.");
+                        signwindow.location.href = 'Home.html';
+                    } else {
+                        alert("Failed to create an appointment. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

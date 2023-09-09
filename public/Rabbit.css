@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.welcome {
+    background-color: #f2f2f2;
+    padding: 100px;
+    text-align: center;
+    font-family: Garamond;
+}
+
+.welcome h1 {
+    font-size: 45px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.welcome p {
+    font-size: 19px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.rabbitgrooming {
+    transition: 0.3s ease;
+    font-family: Garamond;
+    font-size: 19px;
+    text-align: center;
+    font-family: Garamond;
+    background-color: #e1e1e1;
+    color: #333;
+}
+
+.rabbitgrooming h1 {
+    font-size: 40px;
+    margin-top: 0px;
+    color: #333;
+    text-align: center;
+}
+
+.rabbitgrooming h2 {
+    font-size: 27px;
+}
+
+.rabbitgrooming:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.dentalcare {
+    transition: 0.3s ease;
+    font-family: Garamond;
+    font-size: 19px;
+    text-align: center;
+    font-family: Garamond;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.dentalcare h1 {
+    font-size: 40px;
+    margin-top: 0px;
+    color: #333;
+    text-align: center;
+}
+
+.dentalcare h2 {
+    font-size: 27px;
+}
+
+.dentalcare:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.daycare {
+    transition: 0.3s ease;
+    font-family: Garamond;
+    font-size: 19px;
+    text-align: center;
+    font-family: Garamond;
+    background-color: #e1e1e1;
+    color: #333;
+}
+
+.daycare h1 {
+    font-size: 40px;
+    margin-top: 0px;
+    color: #333;
+    text-align: center;
+}
+
+.daycare h2 {
+    font-size: 27px;
+}
+
+.daycare:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.boarding {
+    transition: 0.3s ease;
+    font-family: Garamond;
+    font-size: 19px;
+    text-align: center;
+    font-family: Garamond;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.boarding h1 {
+    font-size: 40px;
+    margin-top: 0px;
+    color: #333;
+    text-align: center;
+}
+
+.boarding h2 {
+    font-size: 27px;
+}
+
+.boarding:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.nad {
+    transition: 0.3s ease;
+    font-family: Garamond;
+    font-size: 19px;
+    text-align: center;
+    font-family: Garamond;
+    background-color: #e1e1e1;
+    color: #333;
+}
+
+.nad h1 {
+    font-size: 40px;
+    margin-top: 0px;
+    color: #333;
+    text-align: center;
+}
+
+.nad h2 {
+    font-size: 27px;
+}
+
+.nad:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.vet {
+    transition: 0.3s ease;
+    font-family: Garamond;
+    font-size: 19px;
+    text-align: center;
+    font-family: Garamond;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.vet h1 {
+    font-size: 40px;
+    margin-top: 0px;
+    color: #333;
+    text-align: center;
+}
+
+.vet h2 {
+    font-size: 27px;
+}
+
+.vet:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.rabbitadoption {
+    transition: 0.3s ease;
+    font-family: Garamond;
+    font-size: 19px;
+    text-align: center;
+    font-family: Garamond;
+    background-color: #e1e1e1;
+    color: #333;
+}
+
+.rabbitadoption h1 {
+    font-size: 40px;
+    margin-top: 0px;
+    color: #333;
+    text-align: center;
+}
+
+.rabbitadoption h2 {
+    font-size: 27px;
+}
+
+.rabbitadoption:hover {
+    opacity: 0.7;
+    cursor: pointer
+}
+
+.reviews {
+    background-color: #f2f2f2;
+    padding: 100px;
+    text-align: center;
+    font-family: Garamond;
+}
+
+.reviews h1 {
+    font-size: 45px;
+    color: crimson;
+    margin-bottom: 20px;
+}
+
+.reviews p {
+    font-size: 19px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.reviews p2 {
+    font-size: 19px;
+    color: brown;
+    margin-bottom: 20px;
+}
