@@ -23,7 +23,7 @@ body {
 }
 
 #dog {
-    background-image: url("dog.jpg");
+    background-image: url("../Images/dog.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -37,7 +37,7 @@ body {
 }
 
 #cat {
-    background-image: url("cat.jpg");
+    background-image: url("../Images/cat.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -51,7 +51,7 @@ body {
 }
 
 #duck {
-    background-image: url("duck.jpg");
+    background-image: url("../Images/duck.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -65,7 +65,7 @@ body {
 }
 
 #hamster {
-    background-image: url("hamster.jpg");
+    background-image: url("../Images/hamster.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -79,7 +79,7 @@ body {
 }
 
 #rabbit {
-    background-image: url("rabbit.jpg");
+    background-image: url("../Images/rabbit.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
