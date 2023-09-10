@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.welcome {
+    background-color: #f2f2f2;
+    padding: 100px;
+    text-align: center;
+    font-family: Garamond;
+}
+
+.welcome h1 {
+    font-size: 50px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.welcome p {
+    font-size: 26px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#dog {
+    background-image: url("dog.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.3s ease;
+    font-family: Garamond;
+}
+
+#dog:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#cat {
+    background-image: url("cat.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.3s ease;
+    font-family: Garamond;
+}
+
+#cat:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#duck {
+    background-image: url("duck.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.3s ease;
+    font-family: Garamond;
+}
+
+#duck:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#hamster {
+    background-image: url("hamster.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.3s ease;
+    font-family: Garamond;
+}
+
+#hamster:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#rabbit {
+    background-image: url("rabbit.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.3s ease;
+    font-family: Garamond;
+}
+
+#rabbit:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.pets {
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pets h1 {
+    font-size: 35px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline;
+    background-color: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 25px;
+}

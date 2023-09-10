@@ -1,0 +1,31 @@
+fieldset {
+    border-radius: 10px;
+}
+
+fieldset legend {
+    color: slategrey;
+}
+
+.form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: forestgreen;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}

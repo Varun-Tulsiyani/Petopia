@@ -1,0 +1,32 @@
+fieldset legend {
+    color: #333;
+}
+
+.login {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 51.25%;
+}
+
+fieldset {
+    border-radius: 10px;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.login input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: forestgreen;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}

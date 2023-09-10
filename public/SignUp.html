@@ -1,0 +1,125 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="SignUp.css">
+    <link rel="stylesheet" href="HeaderFooter.css">
+</head>
+
+<body>
+    <object data="header.html" width="100%" height="100"></object>
+
+    <div class="form">
+        <p>
+            Please fill out all the details.
+        </p>
+        <form id="signUp">
+            <fieldset>
+                <legend>First Name</legend>
+                <input type="text" id="firstname" pattern="^[A-Za-z]{1,}$" size="10" required>
+            </fieldset>
+            <fieldset>
+                <legend>Last Name</legend>
+                <input type="text" id="lastname" pattern="^[A-Za-z]{1,}$" size="10">
+            </fieldset>
+            <fieldset>
+                <legend>Date of Birth</legend>
+                <input type="date" id="dob" required>
+            </fieldset>
+            <fieldset>
+                <legend>Gender</legend>
+                <input type="radio" class="gender" name="gender" value="Male"> Male
+                <input type="radio" class="gender" name="gender" value="Female"> Female
+            </fieldset>
+            <fieldset>
+                <legend>Phone Number</legend>
+                <input type="text" value="+971" readonly>
+                <input type="text" id="phno" pattern="^(0?)5(0|2|4|5|6|8)[0-9]{7}$" placeholder="55 555 5555" required>
+            </fieldset>
+            <fieldset>
+                <legend>Email</legend>
+                <input type="email" id="email" name="email" placeholder="someone@something.com">
+            </fieldset>
+            <fieldset>
+                <legend>Confirm Email</legend>
+                <input type="email" id="checkemail" placeholder="someone@something.com">
+            </fieldset>
+            <fieldset>
+                <legend>Password</legend>
+                <input type="password" id="password" placeholder="Password">
+            </fieldset>
+            <fieldset>
+                <legend>Confirm Password</legend>
+                <input type="password" id="checkpassword" placeholder="Password">
+            </fieldset>
+            <br>
+            <input type="submit" id="submit" value="Create Account">
+        </form>
+    </div>
+
+    <object data="footer.html" width="100%" height="178"></object>
+
+    <script>
+        document.getElementById("signUp").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const firstname = document.getElementById("firstname").value;
+            const lastname = document.getElementById("lastname").value;
+            const dob = document.getElementById("dob").value;
+
+            let gender = "";
+            var genderRadios = document.getElementsByClassName('gender');
+            for (var i = 0; i < genderRadios.length; i++) {
+                if (genderRadios[i].checked) {
+                    gender = genderRadios[i].value;
+                    break;
+                }
+            }
+
+            const phoneNumber = document.getElementById("phno").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const confirmPassword = document.getElementById("checkpassword").value;
+            const confirmEmail = document.getElementById("checkemail").value;
+
+            if (email !== confirmEmail || password !== confirmPassword) {
+                alert("Email address or password does not match the confirmation.");
+                return;
+            }
+
+            fetch('/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    firstname: firstname,
+                    lastname: lastname,
+                    dob: dob,
+                    gender: gender,
+                    phoneNumber: phoneNumber,
+                    email: email,
+                    password: password
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Account created successfully.");
+                        window.location.href = 'LogIn.html';
+                    } else {
+                        alert("Failed to create an account. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>
